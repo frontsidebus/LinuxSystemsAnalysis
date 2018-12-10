@@ -18,7 +18,7 @@ declare -a pkgmgrs=("dnf" "yum" "aptitude")
 
 PKG_MGR=$(for i in "${pkgmgrs[@]}"
 	do
-		which $i 2>/dev/null
+		which $i 2>/dev/null | sed -r 's/$i/\t/g'
 	done
 )
 
@@ -60,5 +60,4 @@ cleanup() {
 	rm -f $LISTFILE
 }
 
-set_pkg_mgr
 cleanup
