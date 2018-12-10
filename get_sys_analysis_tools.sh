@@ -61,7 +61,9 @@ cleanup() {
 }
 
 if [[ $PKG_MGR == *"yum"* ]]; then
-	echo "using yum.. call function here"
+	yum_install_missing
+elif [[ $$PKG_MGR == *"apt"* ]]; then
+	apt_install_missing
 fi
 
 cleanup
