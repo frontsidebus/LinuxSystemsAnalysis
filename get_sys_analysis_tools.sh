@@ -51,6 +51,7 @@ set_pkg_mgr() {
 	do
 		which $pkgmgr &>/dev/null
 		RESULT=$?
+		echo $RESULT
 			if [ $RESULT -ne 0 ]; then
 				echo "...unrecognized or missing package manager"
 				exit 1
