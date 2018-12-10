@@ -51,12 +51,12 @@ set_pkg_mgr() {
 	do
 		which $pkgmgr &>/dev/null
 		RESULT=$?
-			if [ $RESULT -eq 0 ]; then
-				## Log which package manager we are using
-				echo "...system is using $pkgmgr"
-			else
+			if [ $RESULT -ne 0 ]; then
 				echo "...unrecognized or missing package manager"
 				exit 1
+			else
+			## Log which package manager we are using
+				echo "...system is using $pkgmgr"
 			fi
 	done
 }
