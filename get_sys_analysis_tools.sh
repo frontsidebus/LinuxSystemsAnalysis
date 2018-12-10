@@ -18,7 +18,7 @@ declare -a pkgmgrs=("dnf" "yum" "aptitude")
 
 PKG_MGR=$(for i in "${pkgmgrs[@]}"
 	do
-		which $i 2>/dev/null | cut -d "/" -f 3
+		which $i 2>/dev/null | cut -d "/" -f 4
 	done
 )
 
