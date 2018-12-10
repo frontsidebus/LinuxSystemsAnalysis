@@ -45,10 +45,6 @@ apt_install_missing() {
 	done <$LISTFILE
 }
 
-unrecognized_pkgmgr() {
-	
-}
-
 # get the package manager
 set_pkg_mgr() {
 	for pkgmgr in "${pkgmgrs[@]}"
