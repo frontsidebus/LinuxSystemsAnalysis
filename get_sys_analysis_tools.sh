@@ -16,6 +16,14 @@ declare -a packages=("atop" "blktrace" "dstat" "dtrace" "free" "iperf" "pidstat"
 # list of package managers we can add to later if needed
 declare -a pkgmgrs=("dnf" "yum" "aptitude")
 
+PKG_MGR=$(for i in "${pkgmgrs[@]}"
+	do
+		which $i 2>/dev/null
+	done
+)
+
+echo $PKG_MGR
+
 # check for installed packages, keep track of any missing binaries
 check_installed() {
 	for package in "${packages[@]}"
@@ -45,13 +53,7 @@ apt_install_missing() {
 	done <$LISTFILE
 }
 
-# get the package manager
-set_pkg_mgr() {
-	for i in "${pkgmgrs[@]}"
-	do
-		which $i 2>/dev/null
-	done
-}
+
 
 # clean up our temp file
 cleanup() {
