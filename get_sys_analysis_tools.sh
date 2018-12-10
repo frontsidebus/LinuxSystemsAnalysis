@@ -46,10 +46,7 @@ apt_install_missing() {
 }
 
 unrecognized_pkgmgr() {
-	echo "...unrecognized or missing package manager"
-	echo "error installing tool list in $LISTFILE" >> $LOGFILE
-	echo "...exiting" >> $LOGFILE
-	exit 1
+	
 }
 
 # get the package manager
@@ -62,8 +59,10 @@ set_pkg_mgr() {
 				## Log which package manager we are using
 				echo "...system is using $pkgmgr"
 			else
-				$(unrecognized_pkgmgr)
-				
+				echo "...unrecognized or missing package manager"
+				echo "error installing tool list in $LISTFILE" >> $LOGFILE
+				echo "...exiting" >> $LOGFILE
+				exit 1
 			fi
 	done
 }
