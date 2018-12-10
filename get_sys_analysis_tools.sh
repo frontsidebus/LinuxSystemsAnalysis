@@ -24,7 +24,7 @@ check_installed() {
 			echo "$package found"
 		else
 			echo "$package not found"
-			echo "$package" >> /tmp/tools.txt
+			echo "$package" >> $LISTFILE
 		fi
 	done 
 }
