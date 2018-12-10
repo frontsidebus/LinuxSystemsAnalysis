@@ -60,4 +60,8 @@ cleanup() {
 	rm -f $LISTFILE
 }
 
+if [[ $PKG_MGR == *"yum"* ]]; then
+	echo "using yum.. call function here"
+fi
+
 cleanup
