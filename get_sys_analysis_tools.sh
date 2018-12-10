@@ -64,6 +64,9 @@ if [[ $PKG_MGR == *"yum"* ]]; then
 	yum_install_missing
 elif [[ $$PKG_MGR == *"apt"* ]]; then
 	apt_install_missing
+else
+	echo "unrecognized package manager... exiting"
+	exit 1
 fi
 
 cleanup
