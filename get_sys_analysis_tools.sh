@@ -61,11 +61,8 @@ set_pkg_mgr() {
 			if [ $RESULT -eq 0 ]; then
 				## Log which package manager we are using
 				echo "...system is using $pkgmgr"
-				## this is a bit messy, go to the respective function based on the package manager we set
-				## there might be a better way to do this, but this works for now
-				$(echo $pkgmgr"_install_missing")
-#			else
-#				$(unrecognized_pkgmgr)
+			else
+				$(unrecognized_pkgmgr)
 				
 			fi
 	done
