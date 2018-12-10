@@ -56,8 +56,6 @@ set_pkg_mgr() {
 				echo "...system is using $pkgmgr"
 			else
 				echo "...unrecognized or missing package manager"
-				echo "error installing tool list in $LISTFILE" >> $LOGFILE
-				echo "...exiting" >> $LOGFILE
 				exit 1
 			fi
 	done
