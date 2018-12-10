@@ -14,7 +14,7 @@ LOGFILE=log.txt
 declare -a packages=("atop" "blktrace" "dstat" "dtrace" "free" "iperf" "pidstat" "perf" "ping" "pidstat" "mpstat" "iostat" "iotop" "iftop" "ip" "netstat" "nicstat" "sar" "strace" "slabtop" "top" "stap" "tcpdump")
 
 # list of package managers we can add to later if needed
-declare -a pkgmgrs=("dnf" "yum" "aptitude" )
+declare -a pkgmgrs=("dnf" "yum" "aptitude")
 
 # check for installed packages, keep track of any missing binaries
 check_installed() {
@@ -47,18 +47,9 @@ apt_install_missing() {
 
 # get the package manager
 set_pkg_mgr() {
-	for pkgmgr in "${pkgmgrs[@]}"
+	for i in "${pkgmgrs[@]}"
 	do
-		which $pkgmgr &>/dev/null
-		RESULT=$?
-		echo $RESULT
-			if [ $RESULT -ne 0 ]; then
-				echo "...unrecognized or missing package manager"
-				exit 1
-			else
-			## Log which package manager we are using
-				echo "...system is using $pkgmgr"
-			fi
+		which $i 2>/dev/null
 	done
 }
 
