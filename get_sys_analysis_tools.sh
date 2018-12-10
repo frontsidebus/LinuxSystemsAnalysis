@@ -14,7 +14,7 @@ LOGFILE=log.txt
 declare -a packages=("atop" "blktrace" "dstat" "dtrace" "free" "iperf" "pidstat" "perf" "ping" "pidstat" "mpstat" "iostat" "iotop" "iftop" "ip" "netstat" "nicstat" "sar" "strace" "slabtop" "top" "stap" "tcpdump")
 
 # list of package managers we can add to later if needed
-declare -a pkgmgrs=("brew" "apt" "portage" "yum")
+declare -a pkgmgrs=("dnf" "yum" "aptitude" )
 
 # check for installed packages, keep track of any missing binaries
 check_installed() {
