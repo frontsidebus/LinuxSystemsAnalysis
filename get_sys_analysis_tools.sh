@@ -60,6 +60,9 @@ cleanup() {
 	rm -f $LISTFILE
 }
 
+#
+check_installed
+
 if [[ $PKG_MGR == *"yum"* ]]; then
 	yum_install_missing
 elif [[ $$PKG_MGR == *"apt"* ]]; then
